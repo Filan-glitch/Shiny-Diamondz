@@ -17,7 +17,7 @@ shaderpacks/
 .qmenu_opened.marker
 command_history.txt
 minecraftinstance.json
-observable_announce.json
+observable_announce
 options.txt
 patchouli_data.json
 servers.dat
