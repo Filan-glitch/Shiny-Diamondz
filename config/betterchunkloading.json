@@ -5,11 +5,11 @@
   },
   "predictionLoadingSpeed": {
     "desc:": "Set a modifier to prediction area loading speed, increasing the value increases the speed at which chunks load around the player. Note that faster loading also means higher impact on TPS. range: [0.01 -> 10.0], default: 1.0",
-    "predictionLoadingSpeed": 3.0
+    "predictionLoadingSpeed": 1.0
   },
   "predictionarea": {
     "desc:": "Size of the area marked for preloading: default:7 chunks, max: 32, min: 2",
-    "predictionarea": 10
+    "predictionarea": 7
   },
   "enableSmartChunkLoading": {
     "desc:": "Enables smart chunkloading around the player, which dynamically loads the around the player : default:true",
@@ -17,7 +17,7 @@
   },
   "smartChunkLoadingSpeed": {
     "desc:": "Set a modifier to smart chunkloading speed, increasing the value increases the speed at which chunks load around the player. Note that faster loading also means higher impact on TPS. range: [0.01 -> 10.0], default: 1.0",
-    "smartChunkLoadingSpeed": 2.0
+    "smartChunkLoadingSpeed": 1.0
   },
   "preventWalkUnloaded": {
     "desc:": "Prevents players from moving into unloaded areas on serverside, which stalls the server and forceloads the chunk: default:true",

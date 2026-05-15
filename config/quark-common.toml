@@ -290,7 +290,7 @@
 		"Check Hotbar" = false
 		"Unstackables Only" = false
 		#Any items you place in this list will be ignored by the restock feature
-		"Ignored Items" = ["botania:exchange_rod", "botania:dirt_rod", "botania:skydirt_rod", "botania:cobble_rod"]
+		"Ignored Items" = ["quark:trowel", "botania:exchange_rod", "botania:dirt_rod", "botania:skydirt_rod", "botania:cobble_rod"]
 		#This feature disables itself if any of the following mods are loaded:
 		# - inventorytweaks
 		#This is done to prevent content overlap.
@@ -322,9 +322,6 @@
 
 	[management.quick_armor_swapping]
 		"Swap Off Hand" = true
-
-	[management.hotbar_changer]
-		"Animation Time" = 7.0
 
 [tools]
 	Abacus = true
@@ -1645,11 +1642,11 @@
 	"Narrator Readout" = false
 	"Overlay Shader" = false
 	"Spawner Replacer" = false
+	#Big Stone Clusters for Granite, Diorite, and Andesite, like Quark pre-1.18
+	"Vanilla Stone Clusters" = false
 	#Allows placing variant blocks automatically via a selector menu triggered from a keybind
 	"Variant Selector" = false
 	"Villager Rerolling Rework" = false
-	#Big Stone Clusters for Granite, Diorite, and Andesite, like Quark pre-1.18
-	"Vanilla Stone Clusters" = false
 
 	[experimental.adjustable_chat]
 		"Horizontal Shift" = 0
@@ -1718,63 +1715,6 @@
 		#Mobs to be replaced with other mobs.
 		#Format is: "mob1,mob2", i.e. "minecraft:spider,minecraft:skeleton"
 		"Replace Mobs" = []
-
-	#Allows placing variant blocks automatically via a selector menu triggered from a keybind
-	[experimental.variant_selector]
-		#Set this to true to automatically convert any dropped variant items into their originals. Do this ONLY if you intend to take control of every recipe via a data pack or equivalent, as this will introduce dupes otherwise.
-		"Convert Variant Items" = false
-		#Enable the hammer, allowing variants to be swapped between eachother, including the original block. Do this ONLY under the same circumstances as Convert Variant Items.
-		"Enable Hammer" = false
-		"Show Tooltip" = true
-		"Align Hud To Hotbar" = false
-		"Show Simple Hud" = false
-		"Show Hud" = true
-		"Enable Green Tint" = true
-		"Override Held Item Render" = true
-		"Hud Offset X" = 0
-		"Hud Offset Y" = 0
-		#When true, selector arrow will render in same style as crosshair
-		"Render Like Cross Hair" = true
-		#Uses smaller arrow icon for variant selector overlay
-		"Smaller Arrow" = false
-
-		[experimental.variant_selector.variants]
-			#The list of all variant types available for players to use. Values are treated as suffixes to block IDs for scanning.
-			#Prefix any variant type with ! to make it show up for Manual Variants but not be automatically scanned for. (e.g. '!polish')
-			"Variant Types" = ["slab", "stairs", "wall", "fence", "fence_gate", "vertical_slab"]
-			#By default, only a mod's namespace is scanned for variants for its items (e.g. if coolmod adds coolmod:fun_block, it'll search only for coolmod:fun_block_stairs).
-			# Mods in this list are also scanned for variants if none are found in itself (e.g. if quark is in the list and coolmod:fun_block_stairs doesn't exist, it'll try to look for quark:fun_block_stairs next)
-			"Tested Mods" = ["quark", "everycomp", "v_slab_compat"]
-			"Print Variant Map To Log" = false
-			#Format is 'alias=original' in each value (e.g. 'wall=fence' means that a failed search for, minecraft:cobblestone_fence will try cobblestone_wall next)
-			Aliases = ["carpet=slab", "pane=fence"]
-			#Ends of block IDs to try and remove when looking for variants. (e.g. minecraft:oak_planks goes into minecraft:oak_stairs, so we have to include '_planks' in this list for it to find them or else it'll only look for minecraft:oak_planks_stairs)
-			"Strip Candidates" = ["_planks", "_wool", "_block", "s"]
-			#Add manual variant overrides here, the format is 'type,block,output' (e.g. polish,minecraft:stone_bricks,minecraft:chiseled_stone_bricks). The type must be listed in Variant Types
-			"Manual Variants" = []
-			# A list of block IDs and mappings to be excluded from variant selection.
-			#To exclude a block from being turned into other blocks, just include the block ID (e.g. minecraft:cobblestone).
-			#To exclude a block from having other blocks turned into it, suffix it with = (e.g. =minecraft:cobblestone_stairs)
-			#To exclude a specific block->variant combination, put = between the two (e.g. minecraft:cobblestone=minecraft:cobblestone_stairs)
-			Blacklist = ["minecraft:snow", "minecraft:bamboo", "minecraft:bamboo_block"]
-
-	[experimental.villager_rerolling_rework]
-		#If enabled, the first two trades a villager generates for a profession will always be the same for a given villager.
-		#This prevents repeatedly placing down a job site block to reroll the villager's trades.
-		"Seed Initial Villager Trades" = true
-		#Set to 0 to disable the chance to reroll trades when restocking.
-		#It's possible for a trade to not restock even when the chance is 1. This happens when the rerolled trade is one the villager already has.
-		#This chance only guarantees a reroll will be attempted.
-		#Allowed values: [0,1]
-		"Chance To Reroll When Restocking" = 0.25
-		#Set to 0 to disable the chance to reroll trades when restocking. Set to -1 to allow unlimited rerolling.
-		#Trades earlier in the list will restock first.
-		"Maximum Restocks Per Day" = 3
-		#If enabled, villagers will reroll when they restock, rather than when they begin work for the day.
-		#If disabled, players can prevent rerolling by ensuring the villager isn't out of stock on their last restock of the day.
-		"Reroll On Any Restock" = false
-		#If enabled, villagers will be able to reroll any trade that has been used AT ALL since the last restock.
-		"Reroll Even If Not Out Of Stock" = false
 
 	#Big Stone Clusters for Granite, Diorite, and Andesite, like Quark pre-1.18
 	[experimental.vanilla_stone_clusters]
@@ -1865,6 +1805,63 @@
 				[experimental.vanilla_stone_clusters.andesite.biomes.biomes]
 					Biomes = []
 					"Is Blacklist" = true
+
+	#Allows placing variant blocks automatically via a selector menu triggered from a keybind
+	[experimental.variant_selector]
+		#Set this to true to automatically convert any dropped variant items into their originals. Do this ONLY if you intend to take control of every recipe via a data pack or equivalent, as this will introduce dupes otherwise.
+		"Convert Variant Items" = false
+		#Enable the hammer, allowing variants to be swapped between eachother, including the original block. Do this ONLY under the same circumstances as Convert Variant Items.
+		"Enable Hammer" = false
+		"Show Tooltip" = true
+		"Align Hud To Hotbar" = false
+		"Show Simple Hud" = false
+		"Show Hud" = true
+		"Enable Green Tint" = true
+		"Override Held Item Render" = true
+		"Hud Offset X" = 0
+		"Hud Offset Y" = 0
+		#When true, selector arrow will render in same style as crosshair
+		"Render Like Cross Hair" = true
+		#Uses smaller arrow icon for variant selector overlay
+		"Smaller Arrow" = false
+
+		[experimental.variant_selector.variants]
+			#The list of all variant types available for players to use. Values are treated as suffixes to block IDs for scanning.
+			#Prefix any variant type with ! to make it show up for Manual Variants but not be automatically scanned for. (e.g. '!polish')
+			"Variant Types" = ["slab", "stairs", "wall", "fence", "fence_gate", "vertical_slab"]
+			#By default, only a mod's namespace is scanned for variants for its items (e.g. if coolmod adds coolmod:fun_block, it'll search only for coolmod:fun_block_stairs).
+			# Mods in this list are also scanned for variants if none are found in itself (e.g. if quark is in the list and coolmod:fun_block_stairs doesn't exist, it'll try to look for quark:fun_block_stairs next)
+			"Tested Mods" = ["quark", "everycomp", "v_slab_compat"]
+			"Print Variant Map To Log" = false
+			#Format is 'alias=original' in each value (e.g. 'wall=fence' means that a failed search for, minecraft:cobblestone_fence will try cobblestone_wall next)
+			Aliases = ["carpet=slab", "pane=fence"]
+			#Ends of block IDs to try and remove when looking for variants. (e.g. minecraft:oak_planks goes into minecraft:oak_stairs, so we have to include '_planks' in this list for it to find them or else it'll only look for minecraft:oak_planks_stairs)
+			"Strip Candidates" = ["_planks", "_wool", "_block", "s"]
+			#Add manual variant overrides here, the format is 'type,block,output' (e.g. polish,minecraft:stone_bricks,minecraft:chiseled_stone_bricks). The type must be listed in Variant Types
+			"Manual Variants" = []
+			# A list of block IDs and mappings to be excluded from variant selection.
+			#To exclude a block from being turned into other blocks, just include the block ID (e.g. minecraft:cobblestone).
+			#To exclude a block from having other blocks turned into it, suffix it with = (e.g. =minecraft:cobblestone_stairs)
+			#To exclude a specific block->variant combination, put = between the two (e.g. minecraft:cobblestone=minecraft:cobblestone_stairs)
+			Blacklist = ["minecraft:snow", "minecraft:bamboo", "minecraft:bamboo_block"]
+
+	[experimental.villager_rerolling_rework]
+		#If enabled, the first two trades a villager generates for a profession will always be the same for a given villager.
+		#This prevents repeatedly placing down a job site block to reroll the villager's trades.
+		"Seed Initial Villager Trades" = true
+		#Set to 0 to disable the chance to reroll trades when restocking.
+		#It's possible for a trade to not restock even when the chance is 1. This happens when the rerolled trade is one the villager already has.
+		#This chance only guarantees a reroll will be attempted.
+		#Allowed values: [0,1]
+		"Chance To Reroll When Restocking" = 0.25
+		#Set to 0 to disable the chance to reroll trades when restocking. Set to -1 to allow unlimited rerolling.
+		#Trades earlier in the list will restock first.
+		"Maximum Restocks Per Day" = 3
+		#If enabled, villagers will reroll when they restock, rather than when they begin work for the day.
+		#If disabled, players can prevent rerolling by ensuring the villager isn't out of stock on their last restock of the day.
+		"Reroll On Any Restock" = false
+		#If enabled, villagers will be able to reroll any trade that has been used AT ALL since the last restock.
+		"Reroll Even If Not Out Of Stock" = false
 
 [oddities]
 	Backpack = true

@@ -3,7 +3,12 @@
     "minecraft",
     "crafttweaker",
     "create",
-    "mekanism"
+    "mekanism",
+    "pneumaticcraft",
+    "copycats",
+    "create_connected",
+    "create_dd",
+    "tfmg"
   ],
   "priority_overrides": {},
   "stone_variants": [
@@ -27,7 +32,20 @@
     "c:rods/{material}",
     "c:storage_blocks/raw_{material}",
     "c:storage_blocks/{material}",
-    "c:wires/{material}"
+    "c:wires/{material}",
+    "c:ingots/plastic",
+    "createaddoncompatibility:six_way_gearbox",
+    "copycats:copycat_beam",
+    "copycats:copycat_block",
+    "copycats:copycat_board",
+    "copycats:copycat_box",
+    "copycats:copycat_catwalk",
+    "copycats:copycat_fence",
+    "copycats:copycat_fence_gate",
+    "copycats:copycat_slab",
+    "copycats:copycat_stairs",
+    "copycats:copycat_vertical_step",
+    "copycats:copycat_wall"
   ],
   "ignored_tags": [],
   "ignored_items": [],
