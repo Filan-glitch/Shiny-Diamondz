@@ -1,0 +1,22 @@
+[Addons]
+	#Server-side toggle for the optional Wyvern Staff of Power. Disabled by default; when disabled, its recipe, upgrade recipes, and DE creative tab entry are hidden for everyone on the server.
+	enableWyvernStaff = false
+	#Makes Retro Draconic armor and optional staff report Draconic Evolution as their creator mod in tooltips/search integrations. This is cosmetic and does not change registry ids.
+	showRetroItemsAsDraconicEvolution = true
+
+[Tweaks]
+	#Improves stabilized spawner placement so mobs are not spawned inside blocks. Disable this to restore Draconic Evolution's original spawn validation.
+	enableStabilizedSpawnerFix = true
+	#Separates the Draconium Chest crafting, smelting, capacitor, and core slots from its main inventory for inventory sorting mods.
+	isolateDraconiumChestUtilitySlots = true
+	#Multiplies the vanilla Ender Dragon death and respawn ritual speed. 1.0 keeps vanilla timing; 2.5 makes both sequences about 2.5x faster.
+	# Default: 2.5
+	# Range: 1.0 ~ 20.0
+	enderDragonSequenceSpeedMultiplier = 2.5
+
+[Upgrade_System]
+	#Fully replaces modern Draconic Evolution module-derived energy and shield handling with the classic 1.12.2-style retro data model. Disable only if you need the older compatibility mode.
+	enableClassic112Mechanics = true
+	#Selects how retro fusion upgrades are applied. HIDDEN_MODULES is the current compatibility mode. VIRTUAL_1_12_DATA keeps upgrade levels as retro data and exposes their module stats virtually, closer to Draconic Evolution 1.12.2's upgrade storage.
+	#Allowed Values: HIDDEN_MODULES, VIRTUAL_1_12_DATA
+	upgradeBackend = "VIRTUAL_1_12_DATA"

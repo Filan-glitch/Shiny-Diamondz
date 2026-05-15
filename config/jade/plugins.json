@@ -98,6 +98,16 @@
     "crafting_monitor": true,
     "part_name": true
   },
+  "tesseract": {
+    "tesseract": true,
+    "remove_default": true
+  },
+  "enderio": {
+    "soul_bound": true
+  },
+  "projecte": {
+    "emc_provider": true
+  },
   "mekanism": {
     "chemical": true,
     "remove_builtin": true,

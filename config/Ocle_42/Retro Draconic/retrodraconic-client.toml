@@ -1,0 +1,9 @@
+[UI_Settings]
+	#X-axis offset for the upgrade stats panel (Default: 0)
+	# Default: 0
+	# Range: -2000 ~ 2000
+	guiOffsetX = 0
+	#Y-axis offset for the upgrade stats panel (Default: 0)
+	# Default: 0
+	# Range: -2000 ~ 2000
+	guiOffsetY = 0
